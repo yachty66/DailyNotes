@@ -11,6 +11,10 @@
 		5679A9CE2BB5F85C009A3CC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679A9CD2BB5F85C009A3CC0 /* ContentView.swift */; };
 		5679A9D02BB5F85D009A3CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5679A9CF2BB5F85D009A3CC0 /* Assets.xcassets */; };
 		5679A9D32BB5F85D009A3CC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5679A9D22BB5F85D009A3CC0 /* Preview Assets.xcassets */; };
+		5679A9DB2BB5FBEE009A3CC0 /* CreateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679A9DA2BB5FBEE009A3CC0 /* CreateFolder.swift */; };
+		5679A9DD2BB5FC0F009A3CC0 /* CreateNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679A9DC2BB5FC0F009A3CC0 /* CreateNote.swift */; };
+		5679A9DF2BB5FCAD009A3CC0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679A9DE2BB5FCAD009A3CC0 /* Timer.swift */; };
+		5679A9E12BB60434009A3CC0 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679A9E02BB60434009A3CC0 /* Permissions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,11 @@
 		5679A9CF2BB5F85D009A3CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5679A9D22BB5F85D009A3CC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5679A9D42BB5F85D009A3CC0 /* DailyNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyNotes.entitlements; sourceTree = "<group>"; };
+		5679A9DA2BB5FBEE009A3CC0 /* CreateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolder.swift; sourceTree = "<group>"; };
+		5679A9DC2BB5FC0F009A3CC0 /* CreateNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNote.swift; sourceTree = "<group>"; };
+		5679A9DE2BB5FCAD009A3CC0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		5679A9E02BB60434009A3CC0 /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		5679A9E22BB60AE7009A3CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +61,16 @@
 		5679A9CA2BB5F85C009A3CC0 /* DailyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				5679A9E22BB60AE7009A3CC0 /* Info.plist */,
 				5679A9CB2BB5F85C009A3CC0 /* DailyNotesApp.swift */,
 				5679A9CD2BB5F85C009A3CC0 /* ContentView.swift */,
 				5679A9CF2BB5F85D009A3CC0 /* Assets.xcassets */,
 				5679A9D42BB5F85D009A3CC0 /* DailyNotes.entitlements */,
 				5679A9D12BB5F85D009A3CC0 /* Preview Content */,
+				5679A9DA2BB5FBEE009A3CC0 /* CreateFolder.swift */,
+				5679A9DC2BB5FC0F009A3CC0 /* CreateNote.swift */,
+				5679A9DE2BB5FCAD009A3CC0 /* Timer.swift */,
+				5679A9E02BB60434009A3CC0 /* Permissions.swift */,
 			);
 			path = DailyNotes;
 			sourceTree = "<group>";
@@ -139,7 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5679A9DB2BB5FBEE009A3CC0 /* CreateFolder.swift in Sources */,
+				5679A9DD2BB5FC0F009A3CC0 /* CreateNote.swift in Sources */,
 				5679A9CE2BB5F85C009A3CC0 /* ContentView.swift in Sources */,
+				5679A9DF2BB5FCAD009A3CC0 /* Timer.swift in Sources */,
+				5679A9E12BB60434009A3CC0 /* Permissions.swift in Sources */,
 				5679A9CC2BB5F85C009A3CC0 /* DailyNotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +297,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyNotes/Info.plist;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Please give access for Apple Notes.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +326,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyNotes/Info.plist;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Please give access for Apple Notes.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
