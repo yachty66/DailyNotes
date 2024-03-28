@@ -1,8 +1,7 @@
-import AppKit
 import Foundation
 
-func checkAndCreateFolder() {
-    DispatchQueue.global(qos: .background).async {
+func checkAndCreateFolder() async {
+    await withCheckedContinuation { continuation in
         let appleScriptCode = """
         tell application "Notes"
             if not (exists folder "DailyNotes") then
@@ -12,13 +11,13 @@ func checkAndCreateFolder() {
         """
         var error: NSDictionary?
         if let scriptObject = NSAppleScript(source: appleScriptCode) {
-            let output = scriptObject.executeAndReturnError(&error)
-            DispatchQueue.main.async {
-                if let error = error {
-                    print("AppleScript Error: \(error)")
-                } else {
-                    print("Successfully checked/created the 'DailyNotes' folder. Output: \(output)")
-                }
+            scriptObject.executeAndReturnError(&error)
+            if let error = error {
+                print("AppleScript Error: \(error)")
+                continuation.resume()
+            } else {
+                print("Successfully checked/created the 'DailyNotes' folder.")
+                continuation.resume()
             }
         }
     }
