@@ -8,3 +8,6 @@ DailyNotes - Inside the Daily Notes folder, every day synced with the current ti
 - [ ] dont have an icon in docker but have mac status bar item with white icon
 - [ ] its a real application in dmg format
 - [ ] contains exact steps to make it running on mac
+
+
+now once the app was started the first time it should be working always
