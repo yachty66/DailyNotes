@@ -6,8 +6,7 @@ class NotificationHandler {
     // every time i am closing and open my mac this functions are called
     var onWakeOrUnlock: (() -> Void)?
 
-
-    //now every time the mac wakes up the timer should be starting again 
+    // now every time the mac wakes up the timer should be starting again
     init() {
         NSWorkspace.shared.notificationCenter.addObserver(
             forName: NSWorkspace.didWakeNotification,
@@ -29,8 +28,12 @@ class NotificationHandler {
 @main
 struct DailyNotesApp: App {
     let notificationHandler = NotificationHandler()
+    var statusBar: NSStatusItem?
+
 
     init() {
+        setupStatusBarItem()
+
         Task {
             await checkAndCreateFolder()
             await createNote()
@@ -59,6 +62,16 @@ struct DailyNotesApp: App {
         print("mac woke up")
         TimerManager.startDailyTaskTimer { [self] in
             await executeDailyTasks()
+        }
+    }
+
+    mutating func setupStatusBarItem() {
+        statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        if let button = statusBar?.button {
+            button.image = NSImage(named: "MenuBar") // Replace "YourTemplateName" with your image name
+            button.image?.isTemplate = true // Mark the image as a template image
+            // button.action = #selector(statusBarButtonClicked(_:))
+            // button.target = self
         }
     }
 }

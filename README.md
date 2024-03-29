@@ -4,8 +4,10 @@ DailyNotes - Inside the Daily Notes folder, every day synced with the current ti
 
 - [x] app checks if DailyNotes folder exists in apple notes and if not it creates one
 - [x] app runs synced with current local time every day 00:01 and creates a new note with the date of today as header
-- [ ] is configured such as that app is starting every time mac launches - basically no probability that the app is not running every day
+- [x] is configured such as that app is starting every time mac launches - basically no probability that the app is not running every day
 - [ ] dont have an icon in docker but have mac status bar item with white icon
+    - how to make nice white icons for the mac status bar? - would be cool to have apple notes icon in white
+    - i just want to display the following message: ✅ App is running
 - [ ] its a real application in dmg format
 - [ ] contains exact steps to make it running on mac
 
