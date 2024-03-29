@@ -3,16 +3,14 @@ import SwiftUI
 @main
 struct DailyNotesApp: App {
     init() {
-        //on app launch folder and note is created
-        Task{
+        // on app launch folder and note is created
+        Task {
             await checkAndCreateFolder()
             await createNote()
         }
-
-        //after this start a timer which is firing every day 00:01 and if its time for the timer than executeDailyTasks is called
-
-        startDailyTaskTimer {
-            await self.executeDailyTasks()
+        startDailyTaskTimer { [self] in
+            print("timer fired")
+            await executeDailyTasks()
         }
     }
 
