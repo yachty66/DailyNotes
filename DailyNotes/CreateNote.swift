@@ -14,11 +14,16 @@ func createNote() async {
         let appleScriptCode = """
         tell application "Notes"
             tell folder "DailyNotes"
-                make new note with properties {name:"\(date)"}
+                set existingNotes to name of every note
+                if "\(date)" is not in existingNotes then
+                    make new note with properties {name:"\(date)"}
+                    log "Note created with date: \(date)"
+                else
+                    log "Note with date \(date) already exists."
+                end if
             end tell
         end tell
         """
-
         var error: NSDictionary?
         if let scriptObject = NSAppleScript(source: appleScriptCode) {
             scriptObject.executeAndReturnError(&error)
@@ -26,7 +31,7 @@ func createNote() async {
                 print("Error: \(error)")
                 continuation.resume()
             } else {
-                print("Note created with date: \(date)")
+                print("Operation completed for date: \(date)")
                 continuation.resume()
             }
         }

@@ -3,11 +3,16 @@ import SwiftUI
 @main
 struct DailyNotesApp: App {
     init() {
-        Task {
+        //on app launch folder and note is created
+        Task{
             await checkAndCreateFolder()
-            print("Folder checked/created")
             await createNote()
-            print("Note created")
+        }
+
+        //after this start a timer which is firing every day 00:01 and if its time for the timer than executeDailyTasks is called
+
+        startDailyTaskTimer {
+            await self.executeDailyTasks()
         }
     }
 
@@ -15,5 +20,10 @@ struct DailyNotesApp: App {
         WindowGroup {
             ContentView()
         }
+    }
+
+    func executeDailyTasks() async {
+        await checkAndCreateFolder()
+        await createNote()
     }
 }
