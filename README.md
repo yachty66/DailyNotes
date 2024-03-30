@@ -1,5 +1,9 @@
 # DailyNotes
 
+## What Is It
+
+DailyNotes is an automated system for Apple Notes that creates a new note with the current date as the title every day. It utilizes a simple AppleScript and a `launchd` job to ensure that you have a fresh note for your daily entries, without the need to manually create one each day.
+
 ## How to Use
 
 1. Clone this repository or download the `CreateFolder.scpt` and `com.dailynotes.plist` files to your Mac.
