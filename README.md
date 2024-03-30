@@ -5,11 +5,7 @@ DailyNotes - Inside the Daily Notes folder, every day synced with the current ti
 - [x] app checks if DailyNotes folder exists in apple notes and if not it creates one
 - [x] app runs synced with current local time every day 00:01 and creates a new note with the date of today as header
 - [x] is configured such as that app is starting every time mac launches - basically no probability that the app is not running every day
-- [ ] dont have an icon in docker but have mac status bar item with white icon
-    - how to make nice white icons for the mac status bar? - would be cool to have apple notes icon in white
-    - i just want to display the following message: ✅ App is running
-- [ ] its a real application in dmg format
-- [ ] contains exact steps to make it running on mac
-
-
-now once the app was started the first time it should be working always
+- [x] create script which when executed manually is creating a dailynotes folder if not exist
+- [x] after checking point above also check if daily note exists and if not create itä
+- [ ] add the day of the week plus make it a subheader
+- [ ] check what the easiest way is to automate the process so that it is run every day 00:01 synced with current time - if its not possible to run the script if the mac sleeps need to find another solution  
