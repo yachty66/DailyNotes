@@ -8,15 +8,18 @@ tell application "Notes"
     set headerTitle to dayOfWeek & ", " & dateString
     set dailyNotesFolder to folder "DailyNotes"
     
-    -- Check if the folder is empty
+    -- Check all notes for existing header
     set noteList to notes of dailyNotesFolder
-    if (count of noteList) is equal to 0 then
-        set lastNote to missing value
-    else
-        set lastNote to the last note of dailyNotesFolder
-    end if
+    set noteExists to false
+    repeat with aNote in noteList
+        if name of aNote starts with headerTitle then
+            set noteExists to true
+            exit repeat
+        end if
+    end repeat
     
-    if lastNote is missing value or name of lastNote does not start with dayOfWeek & ", " & dateString then
+    -- Create a new note only if no existing note with today's date as header
+    if noteExists is false then
         make new note at dailyNotesFolder with properties {name:headerTitle, body:""}
     end if
 end tell
